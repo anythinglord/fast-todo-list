@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class TaskCreate(BaseModel):
     title: str
@@ -15,3 +16,9 @@ class TaskCreate(BaseModel):
                 "completed": False
             }
         }
+
+class TaskPatch(BaseModel):
+    title: Optional[str] = None
+    description: Optional[str] = None
+    # With a default value will be optional in the JSON
+    completed: Optional[bool] = False
