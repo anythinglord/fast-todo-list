@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 from database import SessionLocal, engine
 from models import Base, Task
-from pydantic_models import TaskCreate, TaskPatch
+from schemas import TaskCreate, TaskPatch
 
 # Create the tables automatically
 Base.metadata.create_all(bind=engine)
